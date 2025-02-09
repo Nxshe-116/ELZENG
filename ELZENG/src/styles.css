@@ -1,1 +1,29 @@
-/* You can add global styles to this file, and also import other style files */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.slick-prev:before, .slick-next:before {
+  color: blue;
+
+}
+
+
+.html{
+                     font-family: "Roboto Condensed", serif;
+                     font-optical-sizing: auto;
+
+
+                   }
+
+.img-style{
+  margin-left: auto;
+  margin-right: auto;
+  height: 675px;
+  width:100%;
+}
+
+
+.hover\:underline-thin:hover {
+  text-decoration-thickness: 1px;  /* Adjust thickness */
+}

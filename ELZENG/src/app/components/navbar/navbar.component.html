@@ -1,0 +1,44 @@
+<nav class="fixed top-0 left-0 w-full shadow bg-[#262B2B] font-poppins z-50">
+  <div class="container flex items-center justify-between p-6 mx-auto text-gray-600 capitalize dark:text-gray-300">
+
+
+    <div class="relative w-full max-w-xs">
+      <p class="absolute left-0 top-1/2 transform -translate-y-1/2 text-xl text-gray-800 dark:text-white font-bold">ELZENG</p>
+    </div>
+
+
+    <div class="hidden md:flex items-center space-x-6">
+      <a href="#" class="border-b-2 border-transparent hover:text-[#ECA400] transition-colors duration-300 transform dark:hover:text-gray-200 hover:border-[#ECA400]">Music</a>
+      <a href="#" class="border-b-2 border-transparent hover:text-[#ECA400] transition-colors duration-300 transform dark:hover:text-gray-200 hover:border-[#ECA400]">Management</a>
+      <a href="#" class="border-b-2 border-transparent hover:text-[#ECA400] transition-colors duration-300 transform dark:hover:text-gray-200 hover:border-[#ECA400]">Promotion</a>
+      <a href="#" class="border-b-2 border-transparent hover:text-[#ECA400] transition-colors duration-300 transform dark:hover:text-gray-200 hover:border-[#ECA400]">About</a>
+    </div>
+
+
+    <div class="relative hidden md:block w-full max-w-xs">
+      <input type="text" placeholder="   Search..." class="w-full p-2 pl-8 pr-4 border-t-0 border-l-0 border-r-0 border-b-2 border-gray-300 rounded-none focus:outline-none focus:ring-0 focus:border-[#fefefe] dark:bg-transparent dark:text-white dark:border-transparent dark:focus:border-[#fefefe]" />
+      <svg class="absolute left-3 top-2.5 w-5 h-5 text-gray-500 dark:text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="11" cy="11" r="8"></circle>
+        <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+      </svg>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <div class="md:hidden flex items-center">
+      <button (click)="toggleMenu()" class="text-gray-300 focus:outline-none">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div *ngIf="isMenuOpen" class="md:hidden bg-[#262B2B] shadow-md py-2">
+
+    <a href="#" class="block px-4 py-2 text-gray-300 hover:text-[#ECA400]">Music</a>
+    <a href="#" class="block px-4 py-2 text-gray-300 hover:text-[#ECA400]">Management</a>
+    <a href="#" class="block px-4 py-2 text-gray-300 hover:text-[#ECA400]">Promotion</a>
+    <a href="#" class="block px-4 py-2 text-gray-300 hover:text-[#ECA400]">About</a>
+  </div>
+</nav>
