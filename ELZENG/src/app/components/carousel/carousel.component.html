@@ -1,25 +1,20 @@
-
-
-<div>
-  <ngx-slick-carousel [config]="slideConfig" class="relative w-full full-height-carousel" #slickModal="slick-carousel">
-    <div *ngFor="let slide of slides" ngxSlickItem class="relative w-full">
+<div> <!-- Adjust height here (e.g., h-[600px]) -->
+  <ngx-slick-carousel [config]="slideConfig" class="relative w-full h-full" #slickModal="slick-carousel">
+    <div *ngFor="let slide of slides" ngxSlickItem class="relative w-full h-full">
       <div class="w-full h-full relative">
         <!-- Image -->
-        <img [src]="slide.image" class="w-full h-full object-cover img-style" />
+        <img [src]="slide.image" class="w-full h-full object-cover" />
 
         <!-- Overlay -->
         <div class="absolute inset-0 flex flex-col items-center justify-center text-white bg-black/50 p-6">
-          <h2 class="text-5xl font-normal   ">
+          <h2 class="text-5xl font-normal">
             {{ slide.title }}
           </h2>
           <div class="mt-6 space-x-4">
-            <a [href]="slide.primaryLink" class="text-lg font-thin relative  ">
+            <a [href]="slide.primaryLink" class="text-lg font-thin relative">
               {{ slide.primaryText }} →
-<!--              <span class="ml-2 inline-block opacity-0 hover:opacity-100 hover:ml-4 transition-all">→</span>-->
             </a>
-
           </div>
-
         </div>
       </div>
     </div>

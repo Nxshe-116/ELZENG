@@ -1,0 +1,12 @@
+{
+  "routes": {
+    "/": {},
+    "/about": {},
+    "/management": {},
+    "/music/artists": {},
+    "/music/distribution": {},
+    "/music/management": {},
+    "/promotion": {},
+    "/tv": {}
+  }
+}

@@ -15,7 +15,7 @@ import {CommonModule} from '@angular/common';
 export class CarouselComponent {
   slides = [
     {
-      image: 'https://placehold.co/600x400', // Ensure leading '/'
+      image: 'assets/images/img3.jpg', // Ensure leading '/'
       title: 'Welcome to Elzeng Music',
       description: 'Discover our latest music releases and events.',
       primaryText: 'Listen Now',
@@ -24,7 +24,7 @@ export class CarouselComponent {
       secondaryLink: '/about'
     },
     {
-      image: 'https://placehold.co/600x400',
+      image: 'assets/images/image1.jpg',
       title: 'Join Elzeng Promotions',
       description: 'Elevate your brand with our music promotions.',
       primaryText: 'Get Started',
@@ -33,7 +33,7 @@ export class CarouselComponent {
       secondaryLink: '/contact'
     },
     {
-      image: 'https://placehold.co/600x400',
+      image: 'assets/images/image2.jpg',
       title: 'Meet Our Management Team',
       description: 'We manage top artists in the industry.',
       primaryText: 'View Artists',
@@ -42,7 +42,7 @@ export class CarouselComponent {
       secondaryLink: '/careers'
     },
     {
-      image: 'https://placehold.co/600x400',
+      image: 'assets/images/image3.jpg',
       title: 'Meet Our Management Team',
       description: 'We manage top artists in the industry.',
       primaryText: 'View Artists',
@@ -68,7 +68,7 @@ export class CarouselComponent {
       {
         breakpoint: 992,
         settings: {
-          arrows: true,
+          arrows: false,
           slidesToShow: 1,
           slidesToScroll: 1,
           infinite: true,

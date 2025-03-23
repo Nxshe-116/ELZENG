@@ -1,8 +1,8 @@
-<nav class="fixed top-0 left-0 w-full shadow bg-[#262B2B] font-poppins z-50">
+<nav class="fixed top-0 left-0 w-full shadow bg-[#181A1A] font-poppins z-50">
   <div class="container flex items-center justify-between p-4 mx-auto text-gray-600 capitalize dark:text-gray-300">
     <!-- Logo -->
     <div class="relative w-full max-w-xs">
-      <p class="text-xl text-white font-bold">ELZENG</p>
+      <a routerLink="/" class="text-xl text-white font-bold">ELZENG</a>
     </div>
 
     <!-- Desktop Menu -->
@@ -14,26 +14,24 @@
           Music
         </button>
         <!-- Dropdown Content -->
-        <div class="absolute hidden group-hover:block bg-[#262B2B] shadow-lg mt-2 rounded-lg w-[1000px] left-1/2 transform -translate-x-1/2">
+        <div
+          class="absolute hidden group-hover:block bg-[#181A1A] shadow-lg mt-2 rounded-none w-[800px] left-1/2 transform -translate-x-1/2">
           <div class="flex">
             <!-- Dropdown Options -->
             <div class="w-1/3 p-4">
-              <a href="#" class="block px-4 py-2 text-gray-300 hover:text-[#ECA400] hover:bg-[#1E2222]">Management</a>
-              <a href="#" class="block px-4 py-2 text-gray-300 hover:text-[#ECA400] hover:bg-[#1E2222]">Distribution</a>
-              <a href="#" class="block px-4 py-2 text-gray-300 hover:text-[#ECA400] hover:bg-[#1E2222]">Artists</a>
+              <a routerLink="/music/management" class="block px-4 py-2 text-gray-300 hover:text-[#ECA400] hover:bg-[#1E2222]">Management</a>
+              <a routerLink="/music/distribution" class="block px-4 py-2 text-gray-300 hover:text-[#ECA400] hover:bg-[#1E2222]">Distribution</a>
+              <a routerLink="/music/artists" class="block px-4 py-2 text-gray-300 hover:text-[#ECA400] hover:bg-[#1E2222]">Artists</a>
             </div>
             <!-- Featured Section -->
             <div class="w-2/3 p-4 border-l border-[#1E2222]">
               <h3 class="text-lg font-bold text-[#ECA400] mb-4">Featured</h3>
-              <div class="grid grid-cols-3 gap-4"> <!-- Changed to 3 columns -->
-       
-                <!-- Featured Item 5 -->
-                <div class="bg-[#1E2222] p-4 rounded-lg">
+              <div class="grid grid-cols-3 gap-4">
+                <div class="bg-[#1E2222] p-4 rounded-none">
                   <h4 class="text-white font-semibold">Campaign Success</h4>
                   <p class="text-gray-400 text-sm">Our latest marketing wins.</p>
                 </div>
-                <!-- Featured Item 6 -->
-                <div class="bg-[#1E2222] p-4 rounded-lg">
+                <div class="bg-[#1E2222] p-4 rounded-none">
                   <h4 class="text-white font-semibold">Event Calendar</h4>
                   <p class="text-gray-400 text-sm">View upcoming events.</p>
                 </div>
@@ -50,22 +48,23 @@
           Management
         </button>
         <!-- Dropdown Content -->
-        <div class="absolute hidden group-hover:block bg-[#262B2B] shadow-lg mt-2 rounded-lg w-[1200px] left-1/2 transform -translate-x-1/2">
+        <div
+          class="absolute hidden group-hover:block bg-[#181A1A] shadow-lg mt-2 rounded-none w-[800px] left-1/2 transform -translate-x-1/2">
           <div class="flex">
             <!-- Dropdown Options -->
             <div class="w-1/3 p-4">
-              <a href="#" class="block px-4 py-2 text-gray-300 hover:text-[#ECA400] hover:bg-[#1E2222]">Artist Management</a>
-              <a href="#" class="block px-4 py-2 text-gray-300 hover:text-[#ECA400] hover:bg-[#1E2222]">Event Management</a>
+              <a routerLink="/management/artist" class="block px-4 py-2 text-gray-300 hover:text-[#ECA400] hover:bg-[#1E2222]">Artist Management</a>
+              <a routerLink="/management/event" class="block px-4 py-2 text-gray-300 hover:text-[#ECA400] hover:bg-[#1E2222]">Event Management</a>
             </div>
             <!-- Featured Section -->
             <div class="w-2/3 p-4 border-l border-[#1E2222]">
               <h3 class="text-lg font-bold text-[#ECA400] mb-4">Featured</h3>
               <div class="grid grid-cols-2 gap-4">
-                <div class="bg-[#1E2222] p-4 rounded-lg">
+                <div class="bg-[#1E2222] p-4 rounded-none">
                   <h4 class="text-white font-semibold">Artist Spotlight</h4>
                   <p class="text-gray-400 text-sm">Meet our top artists.</p>
                 </div>
-                <div class="bg-[#1E2222] p-4 rounded-lg">
+                <div class="bg-[#1E2222] p-4 rounded-none">
                   <h4 class="text-white font-semibold">Event Calendar</h4>
                   <p class="text-gray-400 text-sm">View upcoming events.</p>
                 </div>
@@ -82,22 +81,23 @@
           Promotion
         </button>
         <!-- Dropdown Content -->
-        <div class="absolute hidden group-hover:block bg-[#262B2B] shadow-lg mt-2 rounded-lg w-[1200px] left-1/2 transform -translate-x-1/2">
+        <div
+          class="absolute hidden group-hover:block bg-[#181A1A] shadow-lg mt-2 rounded-none w-[800px] left-1/2 transform -translate-x-1/2">
           <div class="flex">
             <!-- Dropdown Options -->
             <div class="w-1/3 p-4">
-              <a href="#" class="block px-4 py-2 text-gray-300 hover:text-[#ECA400] hover:bg-[#1E2222]">Digital Marketing</a>
-              <a href="#" class="block px-4 py-2 text-gray-300 hover:text-[#ECA400] hover:bg-[#1E2222]">Social Media Promotion</a>
+              <a routerLink="/promotion/digital" class="block px-4 py-2 text-gray-300 hover:text-[#ECA400] hover:bg-[#1E2222]">Digital Marketing</a>
+              <a routerLink="/promotion/social" class="block px-4 py-2 text-gray-300 hover:text-[#ECA400] hover:bg-[#1E2222]">Social Media Promotion</a>
             </div>
             <!-- Featured Section -->
             <div class="w-2/3 p-4 border-l border-[#1E2222]">
               <h3 class="text-lg font-bold text-[#ECA400] mb-4">Featured</h3>
               <div class="grid grid-cols-2 gap-4">
-                <div class="bg-[#1E2222] p-4 rounded-lg">
+                <div class="bg-[#1E2222] p-4 rounded-none">
                   <h4 class="text-white font-semibold">Campaign Success</h4>
                   <p class="text-gray-400 text-sm">Our latest marketing wins.</p>
                 </div>
-                <div class="bg-[#1E2222] p-4 rounded-lg">
+                <div class="bg-[#1E2222] p-4 rounded-none">
                   <h4 class="text-white font-semibold">Social Media Trends</h4>
                   <p class="text-gray-400 text-sm">Stay ahead of the curve.</p>
                 </div>
@@ -108,28 +108,18 @@
       </div>
 
       <!-- About (No Dropdown) -->
-      <a href="#"
+      <a routerLink="/about"
         class="text-gray-300 hover:text-[#ECA400] transition-colors duration-300 border-b-2 border-transparent hover:border-[#ECA400]">About</a>
     </div>
 
     <!-- Search Bar -->
     <div class="relative hidden md:block w-full max-w-xs">
-      <input
-        type="text"
-        placeholder="Search..."
+      <input type="text" placeholder="Search..."
         class="w-full p-2 pl-10 pr-4 border-b-2 border-gray-300 rounded-none bg-transparent text-white focus:outline-none focus:border-[#ECA400] transition-colors duration-300"
-        aria-label="Search"
-      />
-      <svg
-        class="absolute left-3 top-2.5 w-5 h-5 text-gray-400 pointer-events-none"
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
-        stroke-linecap="round"
-        stroke-linejoin="round"
-      >
+        aria-label="Search" />
+      <svg class="absolute left-3 top-2.5 w-5 h-5 text-gray-400 pointer-events-none" xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+        stroke-linejoin="round">
         <circle cx="11" cy="11" r="8"></circle>
         <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
       </svg>
@@ -137,64 +127,57 @@
 
     <!-- Mobile Menu Button -->
     <div class="md:hidden flex items-center">
-      <button
-        (click)="toggleMenu()"
-        class="text-gray-300 focus:outline-none focus:text-[#ECA400]"
-        aria-label="Toggle Menu"
-      >
+      <button (click)="toggleMenu()" class="text-gray-300 focus:outline-none focus:text-[#ECA400]"
+        aria-label="Toggle Menu">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="2"
-            d="M4 6h16M4 12h16M4 18h16"
-          ></path>
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
         </svg>
       </button>
     </div>
   </div>
 
   <!-- Mobile Menu -->
-  <div
-    *ngIf="isMenuOpen"
-    class="md:hidden bg-[#262B2B] shadow-md py-2 transition-all duration-300 ease-in-out"
-  >
+  <div *ngIf="isMenuOpen" class="md:hidden bg-[#181A1A] shadow-md py-2 transition-all duration-300 ease-in-out">
     <!-- Music Dropdown (Mobile) -->
     <div>
-      <button (click)="toggleMusicDropdown()" class="w-full px-6 py-3 text-gray-300 hover:text-[#ECA400] hover:bg-[#1E2222] transition-colors duration-300 text-left">
+      <button (click)="toggleMusicDropdown()"
+        class="w-full px-6 py-3 text-gray-300 hover:text-[#ECA400] hover:bg-[#1E2222] transition-colors duration-300 text-left">
         Music
       </button>
       <div *ngIf="isMusicDropdownOpen" class="pl-8">
-        <a href="#" class="block px-6 py-2 text-gray-300 hover:text-[#ECA400] hover:bg-[#1E2222]">Management</a>
-        <a href="#" class="block px-6 py-2 text-gray-300 hover:text-[#ECA400] hover:bg-[#1E2222]">Distribution</a>
-        <a href="#" class="block px-6 py-2 text-gray-300 hover:text-[#ECA400] hover:bg-[#1E2222]">Artists</a>
+        <a routerLink="/music/management" class="block px-6 py-2 text-gray-300 hover:text-[#ECA400] hover:bg-[#1E2222]">Management</a>
+        <a routerLink="/music/distribution" class="block px-6 py-2 text-gray-300 hover:text-[#ECA400] hover:bg-[#1E2222]">Distribution</a>
+        <a routerLink="/music/artists" class="block px-6 py-2 text-gray-300 hover:text-[#ECA400] hover:bg-[#1E2222]">Artists</a>
       </div>
     </div>
 
     <!-- Management Dropdown (Mobile) -->
     <div>
-      <button (click)="toggleManagementDropdown()" class="w-full px-6 py-3 text-gray-300 hover:text-[#ECA400] hover:bg-[#1E2222] transition-colors duration-300 text-left">
+      <button (click)="toggleManagementDropdown()"
+        class="w-full px-6 py-3 text-gray-300 hover:text-[#ECA400] hover:bg-[#1E2222] transition-colors duration-300 text-left">
         Management
       </button>
       <div *ngIf="isManagementDropdownOpen" class="pl-8">
-        <a href="#" class="block px-6 py-2 text-gray-300 hover:text-[#ECA400] hover:bg-[#1E2222]">Artist Management</a>
-        <a href="#" class="block px-6 py-2 text-gray-300 hover:text-[#ECA400] hover:bg-[#1E2222]">Event Management</a>
+        <a routerLink="/management/artist" class="block px-6 py-2 text-gray-300 hover:text-[#ECA400] hover:bg-[#1E2222]">Artist Management</a>
+        <a routerLink="/management/event" class="block px-6 py-2 text-gray-300 hover:text-[#ECA400] hover:bg-[#1E2222]">Event Management</a>
       </div>
     </div>
 
     <!-- Promotion Dropdown (Mobile) -->
     <div>
-      <button (click)="togglePromotionDropdown()" class="w-full px-6 py-3 text-gray-300 hover:text-[#ECA400] hover:bg-[#1E2222] transition-colors duration-300 text-left">
+      <button (click)="togglePromotionDropdown()"
+        class="w-full px-6 py-3 text-gray-300 hover:text-[#ECA400] hover:bg-[#1E2222] transition-colors duration-300 text-left">
         Promotion
       </button>
       <div *ngIf="isPromotionDropdownOpen" class="pl-8">
-        <a href="#" class="block px-6 py-2 text-gray-300 hover:text-[#ECA400] hover:bg-[#1E2222]">Digital Marketing</a>
-        <a href="#" class="block px-6 py-2 text-gray-300 hover:text-[#ECA400] hover:bg-[#1E2222]">Social Media Promotion</a>
+        <a routerLink="/promotion/digital" class="block px-6 py-2 text-gray-300 hover:text-[#ECA400] hover:bg-[#1E2222]">Digital Marketing</a>
+        <a routerLink="/promotion/social" class="block px-6 py-2 text-gray-300 hover:text-[#ECA400] hover:bg-[#1E2222]">Social Media Promotion</a>
       </div>
     </div>
 
     <!-- About (No Dropdown) -->
-    <a href="#"
+    <a routerLink="'/about'"> 
       class="block px-6 py-3 text-gray-300 hover:text-[#ECA400] hover:bg-[#1E2222] transition-colors duration-300">About</a>
   </div>
 </nav>
+ 

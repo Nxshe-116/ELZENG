@@ -1,11 +1,12 @@
 import {Component, HostListener, OnInit} from '@angular/core';
 import {NgClass, NgIf} from '@angular/common';
+import {RouterModule} from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
   imports: [
-    NgIf
-
+    NgIf,
+    RouterModule
   ],
   templateUrl: './navbar.component.html',
   styleUrl: './navbar.component.css'
@@ -14,7 +15,7 @@ export class NavbarComponent implements OnInit {
 
 
   isMenuOpen = false;
- 
+
   isMusicDropdownOpen = false;
   isManagementDropdownOpen = false;
   isPromotionDropdownOpen = false;

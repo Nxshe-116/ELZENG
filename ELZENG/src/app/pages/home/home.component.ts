@@ -3,12 +3,14 @@ import { Component } from '@angular/core';
 // import {NgForOf} from '@angular/common';
 import {SlickCarouselModule} from 'ngx-slick-carousel';
 import {CarouselComponent} from '../../components/carousel/carousel.component';
+import {RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-home',
   imports: [
     SlickCarouselModule,
-    CarouselComponent
+    CarouselComponent,
+    RouterLink
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
@@ -25,7 +27,7 @@ export class HomeComponent {
       secondaryLink: '/careers',
       secondaryText: 'Learn More',
       title: 'Welcome to Elzeng Music',
-      image: "http://placehold.it/350x150/777777"})
+      image: "assets/images/image5.jpg"})
   }
 
   removeSlide() {
@@ -91,7 +93,7 @@ slideConfig = {
     {
       breakpoint: 992,
       settings: {
-        arrows: true,
+        arrows: false,
         slidesToShow: 1,
         slidesToScroll: 1,
         infinite: true,
