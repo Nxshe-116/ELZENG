@@ -14,11 +14,26 @@ export class NavbarComponent implements OnInit {
 
 
   isMenuOpen = false;
+ 
+  isMusicDropdownOpen = false;
+  isManagementDropdownOpen = false;
+  isPromotionDropdownOpen = false;
 
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
   }
 
+  toggleMusicDropdown() {
+    this.isMusicDropdownOpen = !this.isMusicDropdownOpen;
+  }
+
+  toggleManagementDropdown() {
+    this.isManagementDropdownOpen = !this.isManagementDropdownOpen;
+  }
+
+  togglePromotionDropdown() {
+    this.isPromotionDropdownOpen = !this.isPromotionDropdownOpen;
+  }
 
   ngOnInit(): void {
   }

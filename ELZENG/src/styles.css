@@ -1,29 +1,29 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 
-.slick-prev:before, .slick-next:before {
+.slick-prev:before,
+.slick-next:before {
   color: blue;
 
 }
 
 
-.html{
-                     font-family: "Roboto Condensed", serif;
-                     font-optical-sizing: auto;
+.html {
+  font-family: "Roboto Condensed", serif;
+  font-optical-sizing: auto;
 
 
-                   }
+}
 
-.img-style{
+.img-style {
   margin-left: auto;
   margin-right: auto;
   height: 675px;
-  width:100%;
+  width: 100%;
 }
 
 
 .hover\:underline-thin:hover {
-  text-decoration-thickness: 1px;  /* Adjust thickness */
+  text-decoration-thickness: 1px;
+  /* Adjust thickness */
 }
