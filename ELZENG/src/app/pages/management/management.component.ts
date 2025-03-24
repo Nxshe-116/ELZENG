@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-management',
@@ -6,6 +6,9 @@ import { Component } from '@angular/core';
   templateUrl: './management.component.html',
   styleUrl: './management.component.css'
 })
-export class ManagementComponent {
-
-}
+export class ManagementComponent implements OnInit{
+  ngOnInit() {
+    
+      window.scrollTo(0, 0); // Reset scroll to top on route change
+    };
+  }

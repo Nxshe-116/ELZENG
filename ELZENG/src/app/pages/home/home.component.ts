@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 // import {CarouselComponent} from '../../components/carousel/carousel.component';
 // import {NgForOf} from '@angular/common';
 import {SlickCarouselModule} from 'ngx-slick-carousel';
@@ -15,7 +15,12 @@ import {RouterLink} from '@angular/router';
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit{
+  ngOnInit() {
+    
+      window.scrollTo(0, 0); // Reset scroll to top on route change
+    };
+  
 
 
 
