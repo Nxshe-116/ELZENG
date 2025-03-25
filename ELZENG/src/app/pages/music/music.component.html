@@ -9,23 +9,21 @@
                 <!-- Overlay -->
                 <div class="absolute inset-0 flex flex-col items-center justify-center text-white bg-black/50 p-6">
                     <h2 class="text-5xl font-normal text-outline outline-1 outline-black"> </h2>
-                    <h2 class="text-5xl font-normal   ">
+                    <h2 class="text-5xl font-normal">
                         {{ slide.title }}
                     </h2>
                     <div class="mt-6 space-x-4">
-                        <a [href]="slide.primaryLink" class="text-lg font-thin relative  ">
+                        <a [href]="slide.primaryLink" class="text-lg font-thin relative">
                             {{ slide.primaryText }} →
-                            <!--              <span class="ml-2 inline-block opacity-0 hover:opacity-100 hover:ml-4 transition-all">→</span>-->
                         </a>
-
                     </div>
-
                 </div>
             </div>
         </div>
     </ngx-slick-carousel>
 </div>
-<div class="py-16 sm:py-32 ">
+
+<div class="py-16 sm:py-32">
     <div class="flex justify-between items-center p-4">
         <h2 class="text-left text-sm font-medium tracking-normal text-gray-900 sm:text-base">
             DISCOVER
@@ -35,10 +33,10 @@
         </a>
     </div>
 
-    <div class=" bg-white">
-
-        <div class="flex justify-between items-center p-4">
-            <div class="relative w-full max-w-xs">
+    <div class="bg-white">
+        <div class="flex flex-col md:flex-row justify-between items-center p-4 gap-4">
+            <!-- Search Input -->
+            <div class="relative w-full md:max-w-xs">
                 <input type="text" placeholder="Search..."
                     class="w-full p-2 pl-10 pr-4 border-b-2 border-gray-300 rounded-none bg-transparent text-black focus:outline-none focus:border-[#ECA400] transition-colors duration-300"
                     aria-label="Search" [(ngModel)]="searchQuery" (input)="onSearch()" />
@@ -49,44 +47,50 @@
                     <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
                 </svg>
             </div>
-            <div class="flex space-x-6">
-                <button class="text-gray-700 hover:text-[#ECA400] text-sm transition-colors duration-300"
-                    (click)="filterContent('mngmt')">
+
+            <!-- Filter Buttons -->
+            <div class="flex flex-wrap justify-center gap-4 md:gap-6">
+                <button class="text-gray-700 hover:text-[#ECA400] text-sm transition-colors duration-300 px-2 py-1"
+                    [class.text-[#ECA400]]="activeFilter === 'all'" (click)="filterContent('all')">
+                    ALL
+                </button>
+                <button class="text-gray-700 hover:text-[#ECA400] text-sm transition-colors duration-300 px-2 py-1"
+                    [class.text-[#ECA400]]="activeFilter === 'management'" (click)="filterContent('MANAGEMENT')">
                     MANAGEMENT
                 </button>
-                <button class="text-gray-700 hover:text-[#ECA400]  transition-colors duration-300"
-                    (click)="filterContent('artists')">
+                <button class="text-gray-700 hover:text-[#ECA400] text-sm transition-colors duration-300 px-2 py-1"
+                    [class.text-[#ECA400]]="activeFilter === 'artists'" (click)="filterContent('ARTIST')">
                     ARTISTS
                 </button>
-                <button class="text-gray-700 hover:text-[#ECA400] transition-colors duration-300"
-                    (click)="filterContent('distribution')">
-                    DISTRIBUITION
+                <button class="text-gray-700 hover:text-[#ECA400] text-sm transition-colors duration-300 px-2 py-1"
+                    [class.text-[#ECA400]]="activeFilter === 'distribution'" (click)="filterContent('DISTRIBUTION')">
+                    DISTRIBUTION
                 </button>
             </div>
         </div>
- 
+
+        <!-- Artist Grid -->
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6">
-            <!-- Loop through artists and display their information -->
-            <div *ngFor="let artist of artists" class="bg-white rounded-lg shadow-md overflow-hidden">
-              <!-- Artist Picture -->
-              <img [src]="artist.image" [alt]="artist.name" class="w-full h-48 object-cover" />
-          
-              <!-- Artist Name -->
-              <div class="p-4">
-                <h3 class="text-xl font-semibold text-gray-800">{{ artist.name }}</h3>
-              </div>
-          
-              <!-- Learn More   -->
-              <div class="p-4">
-                <span
-                class="text-[#000] cursor-pointer hover:text-[#D18F00] text-base transition-colors duration-300"
-                (click)="onLearnMore(artist)">
-                Learn More
-              </span>
-              </div>
+            <div *ngFor="let artist of filteredArtists"
+                class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                <img [src]="artist.image" [alt]="artist.name" class="w-full h-48 object-cover" />
+                <div class="p-4">
+                    <h3 class="text-xl font-semibold text-gray-800">{{ artist.name }}</h3>
+                    <p class="text-gray-600 text-sm mt-1">{{ artist.category | titlecase }}</p>
+                </div>
+                <div class="p-4 pt-0">
+                    <span
+                        class="text-black cursor-pointer hover:text-[#D18F00] text-base transition-colors duration-300"
+                        (click)="onLearnMore(artist)">
+                        Learn More →
+                    </span>
+                </div>
             </div>
-          </div>
 
-
+            <!-- Empty state -->
+            <div *ngIf="filteredArtists.length === 0" class="col-span-full text-center py-12">
+                <p class="text-gray-500">No artists found matching your criteria</p>
+            </div>
+        </div>
     </div>
 </div>

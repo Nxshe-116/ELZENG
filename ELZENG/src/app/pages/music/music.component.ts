@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
-import { NgFor } from '@angular/common';
+import { CommonModule, NgFor, NgIf } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
 
@@ -10,7 +10,9 @@ import { Router, RouterModule } from '@angular/router';
     SlickCarouselModule,
     NgFor,
     FormsModule,
-    RouterModule
+    RouterModule,
+    NgIf,
+    CommonModule
   ],
   templateUrl: './music.component.html',
   styleUrl: './music.component.css'
@@ -18,33 +20,47 @@ import { Router, RouterModule } from '@angular/router';
 
 
 
-export class MusicComponent implements OnInit{
+export class MusicComponent implements OnInit {
   ngOnInit() {
-    
-      window.scrollTo(0, 0); // Reset scroll to top on route change
-    };
- 
+    this.filteredArtists = [...this.artists];
+    window.scrollTo(0, 0); // Reset scroll to top on route change
+  };
+
 
   constructor(private router: Router) { }
 
 
+  filteredArtists: any[] = [];
+  searchQuery: string = '';
+  activeFilter: string = 'all';
 
 
-  searchQuery: string = ''; // Holds the search input value
-  activeFilter: string | null = null; // Tracks the active filter
-
-
-  onSearch(): void {
-    console.log('Search Query:', this.searchQuery);
-
+  onSearch() {
+    this.applyFilters();
   }
 
-  // Method to handle tag clicks
-  filterContent(type: string): void {
-    this.activeFilter = type;
-    console.log('Filtering by:', type);
-
+  filterContent(category: string) {
+    this.activeFilter = category;
+    this.applyFilters();
   }
+
+  applyFilters() {
+    this.filteredArtists = this.artists.filter(artist => {
+      // Apply category filter
+      const categoryMatch =
+        this.activeFilter === 'all' ||
+        artist.category === this.activeFilter;
+
+      // Apply search filter
+      const searchMatch =
+        !this.searchQuery ||
+        artist.name.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
+        (artist.bio && artist.bio.toLowerCase().includes(this.searchQuery.toLowerCase()));
+
+      return categoryMatch && searchMatch;
+    });
+  }
+
   slides = [
     {
       image: 'assets/images/7.png', // Ensure leading '/'
@@ -57,8 +73,8 @@ export class MusicComponent implements OnInit{
       image: 'assets/images/image1.jpg',
       title: 'W.O.F Band',
 
-      primaryText: 'Get Started',
-      primaryLink: '/promotions',
+      primaryText: 'Listen Now',
+      primaryLink: '/music',
 
     },
 
@@ -322,7 +338,7 @@ export class MusicComponent implements OnInit{
   // Handle "Learn More" button click
   onLearnMore(artist: any): void {
     console.log('Learn More clicked for:', artist);
-    this.router.navigate(['/artist', artist.id], { state: { artist } });
-  }
+    this.router.navigate(['/artist', artist.id], {state: {artist}}).then();
+   }
 
 }
